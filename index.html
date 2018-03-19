@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="css/main.css">
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <title>Vue Js App</title>
 </head>
 <body>
@@ -19,12 +19,21 @@
 
     <ul>
       <!-- <for/each loop for vue> -->
-      <li v-for="fruit in deliciousFruit">
-        <p v-on:click="logFruit">{{ fruit.name }} are {{ fruit.flavour }}</p>
+      <li v-for="movie in moviedata">
+        <!-- <p v-on:click="logFruit">{{ fruit.name }} are {{ fruit.flavour }}</p> -->
+        <a :href="movie.vidsource" v-on:click="logMovie">
+          <img :src=" 'images/' + movie.thumb" alt="" >
+        </a>
       </li>
     </ul>
 
+    <section>
+      <h4>{{ moviename }}</h4>
+      <p>{{ moviedescription }}</p>
+    </section>
+
   </main>
+  
   <script src="js/main.js"></script>
 </body>
 </html>
