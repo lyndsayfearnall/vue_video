@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <title>Vue Js App</title>
+</head>
+<body>
+  <main id="app">
+    <h4>{{welcomeMessage}}</h4>
+
+    <!-- When using attributes, make sure you BIND them (ex. a :href="href" instead of a href = "{{href}}") -->
+    <a :href="targetUrl" :css="{ 'no-decorate' : anchorOff }" target="_blank">Go to Vue!</a>
+    <!--conditional rendering-->
+    <h6 v-if="hasVue">{{ vuemessage }}</h6>
+
+    <ul>
+      <!-- <for/each loop for vue> -->
+      <li v-for="fruit in deliciousFruit">
+        <p v-on:click="logFruit">{{ fruit.name }} are {{ fruit.flavour }}</p>
+      </li>
+    </ul>
+
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>
